@@ -1,0 +1,34 @@
+---
+projects:
+  - provider: git
+    source: "https://github.com/moodle/moodle.git"
+    tag: v2.9.3
+
+  # RSS Plus
+  - provider: zip
+    rename: rss_plus
+    source: "https://moodle.org/plugins/download.php/9385/block_rss_plus_moodle29_2015092400.zip"
+    destination: blocks
+    
+  # Grid Format
+  - provider: zip
+    rename: grid
+    source: "https://moodle.org/plugins/download.php/9312/format_grid_moodle29_2015062205.zip"
+    destination: course/format
+    
+  # Essential Theme
+  - provider: zip
+    rename: essential
+    source: "https://moodle.org/plugins/download.php/9675/theme_essential_moodle29_2015062412.zip"
+    destination: theme
+    
+patches:
+  # Patch the forum to add debugging during cron and modify the template
+  - type:         patch_file
+    source:       patches/mod_forum_lib.php.patch
+    destination:  mod/forum/lib.php
+    
+  # Patch the calendar to fix all-day events
+  - type:         patch_file
+    source:       patches/index.php.patch
+    destination:  index.php

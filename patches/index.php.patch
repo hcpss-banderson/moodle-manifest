@@ -1,0 +1,13 @@
+diff --git a/index.php b/index.php
+index 8e218cd..e12836d 100644
+--- a/index.php
++++ b/index.php
+@@ -52,6 +52,8 @@ if ($CFG->forcelogin) {
+     user_accesstime_log();
+ }
+ 
++// This is a comment from Brendan
++
+ $hassiteconfig = has_capability('moodle/site:config', context_system::instance());
+ 
+ // If the site is currently under maintenance, then print a message.

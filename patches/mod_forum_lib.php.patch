@@ -1,0 +1,13 @@
+diff --git a/mod/forum/lib.php b/mod/forum/lib.php
+index 0e10e2c..538189f 100644
+--- a/mod/forum/lib.php
++++ b/mod/forum/lib.php
+@@ -326,6 +326,8 @@ function forum_supports($feature) {
+         case FEATURE_BACKUP_MOODLE2:          return true;
+         case FEATURE_SHOW_DESCRIPTION:        return true;
+         case FEATURE_PLAGIARISM:              return true;
++        
++        // Brendan: this is another added comment...
+ 
+         default: return null;
+     }
